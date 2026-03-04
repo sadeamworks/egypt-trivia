@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- Transparent background for adaptive icon foreground -->
+
+  <!-- Three Pyramids of Giza - centered and sized for safe zone -->
+  <!-- Large Pyramid (Khufu) - center -->
+  <polygon points="512,280 320,640 704,640" fill="#FFD700"/>
+
+  <!-- Medium Pyramid (Khafre) - left -->
+  <polygon points="340,380 220,640 460,640" fill="#E6C200" opacity="0.85"/>
+
+  <!-- Small Pyramid (Menkaure) - right -->
+  <polygon points="720,440 600,640 840,640" fill="#CCA300" opacity="0.7"/>
+</svg>

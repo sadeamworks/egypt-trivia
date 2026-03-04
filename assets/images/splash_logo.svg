@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500">
+  <!-- Transparent background -->
+
+  <!-- Three Pyramids of Giza -->
+  <!-- Large Pyramid (Khufu) - center -->
+  <polygon points="250,100 140,280 360,280" fill="#FFD700"/>
+
+  <!-- Medium Pyramid (Khafre) - left -->
+  <polygon points="150,150 80,280 220,280" fill="#E6C200" opacity="0.85"/>
+
+  <!-- Small Pyramid (Menkaure) - right -->
+  <polygon points="370,180 300,280 440,280" fill="#CCA300" opacity="0.7"/>
+
+  <!-- App name in Arabic -->
+  <text x="250" y="360" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#FFD700" text-anchor="middle">تريفيا مصر</text>
+
+  <!-- English tagline -->
+  <text x="250" y="400" font-family="Arial, sans-serif" font-size="20" fill="#FFD700" text-anchor="middle" opacity="0.8">Egypt Trivia</text>
+</svg>

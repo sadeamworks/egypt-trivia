@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- Background -->
+  <rect width="1024" height="1024" fill="#1a1a2e"/>
+
+  <!-- Three Pyramids of Giza -->
+  <!-- Large Pyramid (Khufu) - center -->
+  <polygon points="512,200 280,680 744,680" fill="#FFD700"/>
+
+  <!-- Medium Pyramid (Khafre) - left, slightly smaller -->
+  <polygon points="300,320 140,680 460,680" fill="#E6C200" opacity="0.85"/>
+
+  <!-- Small Pyramid (Menkaure) - right, smallest -->
+  <polygon points="750,400 620,680 880,680" fill="#CCA300" opacity="0.7"/>
+
+  <!-- Sun/Moon -->
+  <circle cx="800" cy="180" r="50" fill="#FFD700" opacity="0.6"/>
+
+  <!-- App name in Arabic (optional, can be removed for cleaner icon) -->
+  <!-- <text x="512" y="820" font-family="Arial" font-size="60" fill="#FFD700" text-anchor="middle">تريفيا</text> -->
+</svg>

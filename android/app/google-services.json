@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "518930580483",
+    "project_id": "egypt-trivia",
+    "storage_bucket": "egypt-trivia.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:518930580483:android:d7bff6e7e5a4b0c7c07a36",
+        "android_client_info": {
+          "package_name": "com.egypttrivia.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVMkawnHtNHm3ZfgnoGNGhDfYaGayt02I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

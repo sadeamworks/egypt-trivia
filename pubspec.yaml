@@ -1,0 +1,81 @@
+name: egypt_trivia
+description: تريفيا مصر - Egyptian Trivia Game
+publish_to: 'none'
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # State Management
+  flutter_riverpod: ^2.4.9
+
+  # Navigation
+  go_router: ^13.0.0
+
+  # Local Storage
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+
+  # Fonts
+  google_fonts: ^6.1.0
+
+  # Social Sharing
+  share_plus: ^7.2.1
+
+  # Ads
+  google_mobile_ads: ^5.1.0
+
+  # Analytics, Crashlytics & Messaging
+  firebase_core: ^2.24.2
+  firebase_analytics: ^10.8.0
+  firebase_crashlytics: ^3.4.9
+  firebase_messaging: ^14.7.10
+
+  # Audio
+  audioplayers: ^6.1.0
+
+  # Utilities
+  equatable: ^2.0.5
+  path_provider: ^2.1.1
+  shared_preferences: ^2.2.2
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+  hive_generator: ^2.0.1
+  build_runner: ^2.4.8
+  flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.3.5
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/data/questions.json
+    - assets/images/
+    - assets/audio/
+
+# App Icon Configuration
+flutter_launcher_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/app_icon.png"
+  adaptive_icon_background: "#1a1a2e"
+  adaptive_icon_foreground: "assets/images/app_icon_foreground.png"
+  min_sdk_android: 21
+
+# Splash Screen Configuration
+flutter_native_splash:
+  color: "#1a1a2e"
+  image: "assets/images/splash_logo.png"
+  color_dark: "#1a1a2e"
+  image_dark: "assets/images/splash_logo.png"
+  android: true
+  ios: true
+  android_gravity: center
+  ios_content_mode: center
+  fullscreen: true
