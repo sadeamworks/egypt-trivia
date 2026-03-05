@@ -13,22 +13,22 @@ class PlayGamesIds {
   // ────────────────────────────────────────────────
   // Leaderboard IDs
   // ────────────────────────────────────────────────
-  static const String leaderboardAllTime = 'YOUR_LEADERBOARD_ID_ALL_TIME';
+  static const String leaderboardAllTime = 'CgkIg4ixlY0PEAIQDA';
 
   // ────────────────────────────────────────────────
   // Achievement IDs  (match the `id` in AchievementDefinition)
   // ────────────────────────────────────────────────
   static const Map<String, String> achievementIds = {
-    'first_game':    'YOUR_ACHIEVEMENT_ID_FIRST_GAME',
-    'perfect_score': 'YOUR_ACHIEVEMENT_ID_PERFECT_SCORE',
-    'streak_7':      'YOUR_ACHIEVEMENT_ID_STREAK_7',
-    'streak_30':     'YOUR_ACHIEVEMENT_ID_STREAK_30',
-    'points_1000':   'YOUR_ACHIEVEMENT_ID_POINTS_1000',
-    'points_5000':   'YOUR_ACHIEVEMENT_ID_POINTS_5000',
-    'daily_7':       'YOUR_ACHIEVEMENT_ID_DAILY_7',
-    'daily_30':      'YOUR_ACHIEVEMENT_ID_DAILY_30',
-    'games_10':      'YOUR_ACHIEVEMENT_ID_GAMES_10',
-    'games_50':      'YOUR_ACHIEVEMENT_ID_GAMES_50',
+    'first_game':    'CgkIg4ixlY0PEAIQBQ',
+    'perfect_score': 'CgkIg4ixlY0PEAIQBg',
+    'streak_7':      'CgkIg4ixlY0PEAIQCA',
+    'streak_30':     'CgkIg4ixlY0PEAIQCQ',
+    'points_1000':   'CgkIg4ixlY0PEAIQBw',
+    'points_5000':   'CgkIg4ixlY0PEAIQAg',
+    'daily_7':       'CgkIg4ixlY0PEAIQBA',
+    'daily_30':      'CgkIg4ixlY0PEAIQAw',
+    'games_10':      'CgkIg4ixlY0PEAIQCw',
+    'games_50':      'CgkIg4ixlY0PEAIQCg',
   };
 
   // ────────────────────────────────────────────────

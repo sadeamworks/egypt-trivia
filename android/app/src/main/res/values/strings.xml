@@ -6,5 +6,5 @@
         Play Console → Play Games Services → Setup & Management → Configuration
         Example: 123456789012
     -->
-    <string name="app_id" translatable="false">YOUR_PLAY_GAMES_APP_ID</string>
+    <string name="app_id" translatable="false">518930580483</string>
 </resources>
