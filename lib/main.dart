@@ -9,6 +9,7 @@ import 'data/models/score_entry.g.dart';
 import 'data/models/daily_state.g.dart';
 import 'presentation/providers/analytics_provider.dart';
 import 'presentation/providers/ad_provider.dart';
+import 'presentation/providers/play_games_provider.dart';
 import 'domain/services/notification_service.dart';
 import 'presentation/providers/sound_provider.dart';
 import 'app.dart';
@@ -94,6 +95,16 @@ Future<void> _initializeServices(ProviderContainer container, bool firebaseReady
     } catch (e) {
       debugPrint('[Notifications] Failed: $e');
     }
+  }
+
+  // Initialize Play Games: load pending queue + validate IDs, then sign in
+  try {
+    final playGamesService = container.read(playGamesServiceProvider);
+    await playGamesService.initialize();
+    container.read(playGamesProvider); // triggers silent sign-in + queue flush
+    debugPrint('[PlayGames] Initialized');
+  } catch (e) {
+    debugPrint('[PlayGames] Failed: $e');
   }
 
   debugPrint('[App] All services ready');

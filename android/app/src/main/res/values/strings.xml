@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+        Google Play Games Services App ID.
+        Replace with the numeric ID from:
+        Play Console → Play Games Services → Setup & Management → Configuration
+        Example: 123456789012
+    -->
+    <string name="app_id" translatable="false">YOUR_PLAY_GAMES_APP_ID</string>
+</resources>

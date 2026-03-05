@@ -2,6 +2,8 @@ import 'dart:convert';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../data/models/achievement.dart';
+import '../../domain/services/play_games_service.dart';
+import 'play_games_provider.dart';
 
 /// Achievement state
 class AchievementState {
@@ -36,8 +38,11 @@ class AchievementState {
 class AchievementNotifier extends StateNotifier<AchievementState> {
   static const String _key = 'achievement_progress';
   SharedPreferences? _prefs;
+  final PlayGamesService? _playGames;
 
-  AchievementNotifier() : super(const AchievementState()) {
+  AchievementNotifier({PlayGamesService? playGames})
+      : _playGames = playGames,
+        super(const AchievementState()) {
     _loadProgress();
   }
 
@@ -84,6 +89,8 @@ class AchievementNotifier extends StateNotifier<AchievementState> {
     final newUnlockedIds = Set<String>.from(state.progress.unlockedIds);
     if (newProgress >= maxProgress) {
       newUnlockedIds.add(definition.id);
+      // Sync to Google Play Games Services
+      _playGames?.unlockAchievement(definition.id);
     }
 
     final newAchievementProgress = state.progress.copyWith(
@@ -136,7 +143,8 @@ class AchievementNotifier extends StateNotifier<AchievementState> {
 /// Provider for achievement state
 final achievementProvider =
     StateNotifierProvider<AchievementNotifier, AchievementState>((ref) {
-  return AchievementNotifier();
+  final playGames = ref.watch(playGamesServiceProvider);
+  return AchievementNotifier(playGames: playGames);
 });
 
 /// Provider for unlocked achievement count

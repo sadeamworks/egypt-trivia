@@ -51,6 +51,14 @@
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-6800264470045423~6191320746" />
 
+        <!-- Google Play Games Services App ID
+             Replace YOUR_PLAY_GAMES_APP_ID with the numeric App ID from:
+             Play Console → Play Games Services → Setup & Management → Configuration
+             It looks like: 123456789012 -->
+        <meta-data
+            android:name="com.google.android.gms.games.APP_ID"
+            android:value="@string/app_id" />
+
         <!-- Fix for AdMob + Firebase Analytics conflict -->
         <property
             android:name="android.adservices.AD_SERVICES_CONFIG"

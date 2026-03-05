@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../../core/theme/app_colors.dart';
 import '../../../data/models/achievement.dart';
 import '../../providers/achievement_provider.dart';
+import '../../providers/play_games_provider.dart';
 import '../../widgets/common/egyptian_background.dart';
 import '../../../routing/routes.dart';
 
@@ -24,6 +25,9 @@ class AchievementsScreen extends ConsumerWidget {
               children: [
                 _buildHeader(context),
                 _buildProgressSummary(context, achievementState),
+                const SizedBox(height: 12),
+                _buildPlayGamesSection(context, ref),
+                const SizedBox(height: 12),
                 Expanded(
                   child: _buildAchievementsList(context, ref, achievementState),
                 ),
@@ -54,6 +58,79 @@ class AchievementsScreen extends ConsumerWidget {
           ),
           const Spacer(),
           const SizedBox(width: 48),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildPlayGamesSection(BuildContext context, WidgetRef ref) {
+    final isSignedIn = ref.watch(playGamesProvider);
+
+    if (!isSignedIn) {
+      return Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 20),
+        child: OutlinedButton.icon(
+          onPressed: () async {
+            final notifier = ref.read(playGamesProvider.notifier);
+            final success = await notifier.signIn();
+            if (context.mounted) {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(
+                    success
+                        ? 'تم الاتصال بـ Google Play بنجاح!'
+                        : 'تعذّر الاتصال بـ Google Play',
+                  ),
+                  backgroundColor: success ? AppColors.success : AppColors.error,
+                ),
+              );
+            }
+          },
+          style: OutlinedButton.styleFrom(
+            foregroundColor: AppColors.gold,
+            side: const BorderSide(color: AppColors.gold),
+            minimumSize: const Size(double.infinity, 48),
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+          ),
+          icon: const Icon(Icons.sports_esports),
+          label: const Text('اتصل بـ Google Play Games'),
+        ),
+      );
+    }
+
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20),
+      child: Row(
+        children: [
+          Expanded(
+            child: ElevatedButton.icon(
+              onPressed: () {
+                ref.read(playGamesServiceProvider).showAchievements();
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: AppColors.gold,
+                foregroundColor: Colors.white,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              ),
+              icon: const Icon(Icons.emoji_events),
+              label: const Text('Google Play'),
+            ),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: ElevatedButton.icon(
+              onPressed: () {
+                ref.read(playGamesServiceProvider).showLeaderboard();
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: AppColors.goldDark,
+                foregroundColor: Colors.white,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+              ),
+              icon: const Icon(Icons.leaderboard),
+              label: const Text('المتصدرين'),
+            ),
+          ),
         ],
       ),
     );
